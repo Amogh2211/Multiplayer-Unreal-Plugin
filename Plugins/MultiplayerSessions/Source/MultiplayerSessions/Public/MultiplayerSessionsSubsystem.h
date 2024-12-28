@@ -36,6 +36,8 @@ public:
 	void DestroySession();
 	void StartSession();
 
+	bool IsValidSessionInterface();
+
 	//
 	// Our own custom delegates for the Menu class to bind callbacks to
 	//
@@ -60,6 +62,7 @@ protected:
 private:
 	IOnlineSessionPtr SessionInterface;
 	TSharedPtr<FOnlineSessionSettings> LastSessionSettings;
+	TSharedPtr<FOnlineSessionSearch> LastSessionSearch;
 
 	//
 	// To add to the Online Session Interface delegate list.
@@ -75,4 +78,8 @@ private:
 	FDelegateHandle DestroySessionCompleteDelegateHandle;
 	FOnStartSessionCompleteDelegate StartSessionCompleteDelegate;
 	FDelegateHandle StartSessionCompleteDelegateHandle;
+
+	bool bCreateSessionOnDestroy{ false };
+	int32 LastNumPublicConnections;
+	FString LastMatchType;
 };

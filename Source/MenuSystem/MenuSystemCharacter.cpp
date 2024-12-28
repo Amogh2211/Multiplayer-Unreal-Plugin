@@ -66,14 +66,14 @@ AMenuSystemCharacter::AMenuSystemCharacter():
 	if (OnlineSubsystem != NULL) {
 		OnlineSessionInterface = OnlineSubsystem->GetSessionInterface();
 
-		if (GEngine != NULL) {
-			GEngine->AddOnScreenDebugMessage(
-				-1, 
-				15.0f, 
-				FColor::Blue,
-				FString::Printf(TEXT("Found subsystem name: %s"), *OnlineSubsystem->GetSubsystemName().ToString())
-			);
-		}
+		//if (GEngine != NULL) {
+		//	GEngine->AddOnScreenDebugMessage(
+		//		-1, 
+		//		15.0f, 
+		//		FColor::Blue,
+		//		FString::Printf(TEXT("Found subsystem name: %s"), *OnlineSubsystem->GetSubsystemName().ToString())
+		//	);
+		//}
 	}
 
 
